@@ -3262,254 +3262,6 @@
       "heatmap": {},
       "hideZeroBuckets": true,
       "highlightCards": true,
-      "id": 77,
-      "legend": {
-        "show": false
-      },
-      "maxDataPoints": 60,
-      "options": {
-        "calculate": false,
-        "calculation": {},
-        "cellGap": 2,
-        "cellValues": {},
-        "color": {
-          "exponent": 0.5,
-          "fill": "#b4ff00",
-          "mode": "scheme",
-          "reverse": false,
-          "scale": "exponential",
-          "scheme": "RdYlGn",
-          "steps": 128
-        },
-        "exemplars": {
-          "color": "rgba(255,0,255,0.7)"
-        },
-        "filterValues": {
-          "le": 1e-9
-        },
-        "legend": {
-          "show": false
-        },
-        "rowsFrame": {
-          "layout": "auto"
-        },
-        "showValue": "never",
-        "tooltip": {
-          "show": true,
-          "yHistogram": true
-        },
-        "yAxis": {
-          "axisPlacement": "left",
-          "decimals": 0,
-          "reverse": false,
-          "unit": "s"
-        }
-      },
-      "pluginVersion": "10.1.1",
-      "reverseYBuckets": false,
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
-          },
-          "editorMode": "code",
-          "expr": "sum(increase(waku_archive_query_duration_seconds_bucket{instance=~\"waku-simulator-nwaku-store-postgres-1:8008\"}[$__rate_interval])) by (le)",
-          "format": "heatmap",
-          "hide": false,
-          "legendFormat": "{{le}}",
-          "range": true,
-          "refId": "B"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
-          },
-          "editorMode": "code",
-          "expr": "sum(increase(waku_store_query_duration_seconds_bucket{instance=~\"waku-simulator-nwaku-store-postgres-1:8008\"}[$__rate_interval])) by (le)",
-          "format": "heatmap",
-          "hide": true,
-          "legendFormat": "{{le}}",
-          "range": true,
-          "refId": "A"
-        }
-      ],
-      "title": "Waku Archive Query Duration (Postgres)",
-      "tooltip": {
-        "show": true,
-        "showHistogram": true
-      },
-      "type": "heatmap",
-      "xAxis": {
-        "show": true
-      },
-      "yAxis": {
-        "decimals": 0,
-        "format": "s",
-        "logBase": 1,
-        "show": true
-      },
-      "yBucketBound": "auto"
-    },
-    {
-      "cards": {},
-      "color": {
-        "cardColor": "#b4ff00",
-        "colorScale": "sqrt",
-        "colorScheme": "interpolateRdYlGn",
-        "exponent": 0.5,
-        "mode": "spectrum"
-      },
-      "dataFormat": "tsbuckets",
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "custom": {
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            },
-            "scaleDistribution": {
-              "type": "linear"
-            }
-          }
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 7,
-        "w": 12,
-        "x": 12,
-        "y": 122
-      },
-      "heatmap": {},
-      "hideZeroBuckets": true,
-      "highlightCards": true,
-      "id": 75,
-      "legend": {
-        "show": false
-      },
-      "maxDataPoints": 60,
-      "options": {
-        "calculate": false,
-        "calculation": {},
-        "cellGap": 2,
-        "cellValues": {},
-        "color": {
-          "exponent": 0.5,
-          "fill": "#b4ff00",
-          "mode": "scheme",
-          "reverse": false,
-          "scale": "exponential",
-          "scheme": "RdYlGn",
-          "steps": 128
-        },
-        "exemplars": {
-          "color": "rgba(255,0,255,0.7)"
-        },
-        "filterValues": {
-          "le": 1e-9
-        },
-        "legend": {
-          "show": false
-        },
-        "rowsFrame": {
-          "layout": "auto"
-        },
-        "showValue": "never",
-        "tooltip": {
-          "show": true,
-          "yHistogram": true
-        },
-        "yAxis": {
-          "axisPlacement": "left",
-          "decimals": 0,
-          "reverse": false,
-          "unit": "s"
-        }
-      },
-      "pluginVersion": "10.1.1",
-      "reverseYBuckets": false,
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
-          },
-          "editorMode": "code",
-          "exemplar": false,
-          "expr": "waku_archive_insert_duration_seconds_bucket{instance=~\"waku-simulator-nwaku-store-postgres-1:8008\"}",
-          "format": "heatmap",
-          "hide": false,
-          "instant": false,
-          "interval": "",
-          "intervalFactor": 1,
-          "legendFormat": "{{le}}",
-          "range": true,
-          "refId": "B"
-        }
-      ],
-      "title": "Waku Archive Insert Duration (Postgres)",
-      "tooltip": {
-        "show": true,
-        "showHistogram": true
-      },
-      "transformations": [],
-      "type": "heatmap",
-      "xAxis": {
-        "show": true
-      },
-      "yAxis": {
-        "decimals": 0,
-        "format": "s",
-        "logBase": 1,
-        "show": true
-      },
-      "yBucketBound": "auto"
-    },
-    {
-      "cards": {},
-      "color": {
-        "cardColor": "#b4ff00",
-        "colorScale": "sqrt",
-        "colorScheme": "interpolateRdYlGn",
-        "exponent": 0.5,
-        "mode": "spectrum"
-      },
-      "dataFormat": "tsbuckets",
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "custom": {
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            },
-            "scaleDistribution": {
-              "type": "linear"
-            }
-          }
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 7,
-        "w": 12,
-        "x": 0,
-        "y": 129
-      },
-      "heatmap": {},
-      "hideZeroBuckets": true,
-      "highlightCards": true,
       "id": 82,
       "legend": {
         "show": false
@@ -3633,7 +3385,275 @@
         "h": 7,
         "w": 12,
         "x": 12,
+        "y": 122
+      },
+      "heatmap": {},
+      "hideZeroBuckets": true,
+      "highlightCards": true,
+      "id": 77,
+      "legend": {
+        "show": false
+      },
+      "maxDataPoints": 60,
+      "options": {
+        "calculate": false,
+        "calculation": {},
+        "cellGap": 2,
+        "cellValues": {},
+        "color": {
+          "exponent": 0.5,
+          "fill": "#b4ff00",
+          "mode": "scheme",
+          "reverse": false,
+          "scale": "exponential",
+          "scheme": "RdYlGn",
+          "steps": 128
+        },
+        "exemplars": {
+          "color": "rgba(255,0,255,0.7)"
+        },
+        "filterValues": {
+          "le": 1e-9
+        },
+        "legend": {
+          "show": false
+        },
+        "rowsFrame": {
+          "layout": "auto"
+        },
+        "showValue": "never",
+        "tooltip": {
+          "show": true,
+          "yHistogram": true
+        },
+        "yAxis": {
+          "axisPlacement": "left",
+          "decimals": 0,
+          "reverse": false,
+          "unit": "s"
+        }
+      },
+      "pluginVersion": "10.1.1",
+      "reverseYBuckets": false,
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "code",
+          "expr": "sum(increase(waku_archive_query_duration_seconds_bucket{instance=~\"waku-simulator-nwaku-store-postgres-1:8008\"}[$__rate_interval])) by (le)",
+          "format": "heatmap",
+          "hide": false,
+          "legendFormat": "{{le}}",
+          "range": true,
+          "refId": "B"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "code",
+          "expr": "sum(increase(waku_store_query_duration_seconds_bucket{instance=~\"waku-simulator-nwaku-store-postgres-1:8008\"}[$__rate_interval])) by (le)",
+          "format": "heatmap",
+          "hide": true,
+          "legendFormat": "{{le}}",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Waku Archive Query Duration (Postgres)",
+      "tooltip": {
+        "show": true,
+        "showHistogram": true
+      },
+      "type": "heatmap",
+      "xAxis": {
+        "show": true
+      },
+      "yAxis": {
+        "decimals": 0,
+        "format": "s",
+        "logBase": 1,
+        "show": true
+      },
+      "yBucketBound": "auto"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 10,
+        "x": 0,
         "y": 129
+      },
+      "id": 85,
+      "options": {
+        "displayMode": "gradient",
+        "minVizHeight": 10,
+        "minVizWidth": 0,
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showUnfilled": true,
+        "valueMode": "color"
+      },
+      "pluginVersion": "10.1.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "(rate(waku_archive_insert_duration_seconds_bucket{instance=~\"waku-simulator-nwaku-store-sqlite-1:8008\"}[1h])/scalar(rate(waku_archive_insert_duration_seconds_count{instance=~\"waku-simulator-nwaku-store-sqlite-1:8008\"}[1h])))*100",
+          "format": "heatmap",
+          "instant": false,
+          "interval": "",
+          "legendFormat": "{{label_name}}",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Insert Time Distribution SQLite ms (Last Hour)",
+      "type": "bargauge"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 10,
+        "x": 12,
+        "y": 129
+      },
+      "id": 84,
+      "options": {
+        "displayMode": "gradient",
+        "minVizHeight": 10,
+        "minVizWidth": 0,
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showUnfilled": true,
+        "valueMode": "color"
+      },
+      "pluginVersion": "10.1.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "(rate(waku_archive_insert_duration_seconds_bucket{instance=~\"waku-simulator-nwaku-store-postgres-1:8008\"}[1h])/scalar(rate(waku_archive_insert_duration_seconds_count{instance=~\"waku-simulator-nwaku-store-postgres-1:8008\"}[1h])))*100",
+          "format": "heatmap",
+          "instant": false,
+          "interval": "",
+          "legendFormat": "{{label_name}}",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Insert Time Distribution Postgres ms (Last Hour)",
+      "type": "bargauge"
+    },
+    {
+      "cards": {},
+      "color": {
+        "cardColor": "#b4ff00",
+        "colorScale": "sqrt",
+        "colorScheme": "interpolateRdYlGn",
+        "exponent": 0.5,
+        "mode": "spectrum"
+      },
+      "dataFormat": "tsbuckets",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "scaleDistribution": {
+              "type": "linear"
+            }
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 12,
+        "x": 0,
+        "y": 139
       },
       "heatmap": {},
       "hideZeroBuckets": true,
@@ -3719,6 +3739,126 @@
       "yBucketBound": "auto"
     },
     {
+      "cards": {},
+      "color": {
+        "cardColor": "#b4ff00",
+        "colorScale": "sqrt",
+        "colorScheme": "interpolateRdYlGn",
+        "exponent": 0.5,
+        "mode": "spectrum"
+      },
+      "dataFormat": "tsbuckets",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "scaleDistribution": {
+              "type": "linear"
+            }
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 12,
+        "x": 12,
+        "y": 139
+      },
+      "heatmap": {},
+      "hideZeroBuckets": true,
+      "highlightCards": true,
+      "id": 75,
+      "legend": {
+        "show": false
+      },
+      "maxDataPoints": 60,
+      "options": {
+        "calculate": false,
+        "calculation": {},
+        "cellGap": 2,
+        "cellValues": {},
+        "color": {
+          "exponent": 0.5,
+          "fill": "#b4ff00",
+          "mode": "scheme",
+          "reverse": false,
+          "scale": "exponential",
+          "scheme": "RdYlGn",
+          "steps": 128
+        },
+        "exemplars": {
+          "color": "rgba(255,0,255,0.7)"
+        },
+        "filterValues": {
+          "le": 1e-9
+        },
+        "legend": {
+          "show": false
+        },
+        "rowsFrame": {
+          "layout": "auto"
+        },
+        "showValue": "never",
+        "tooltip": {
+          "show": true,
+          "yHistogram": true
+        },
+        "yAxis": {
+          "axisPlacement": "left",
+          "decimals": 0,
+          "reverse": false,
+          "unit": "s"
+        }
+      },
+      "pluginVersion": "10.1.1",
+      "reverseYBuckets": false,
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "waku_archive_insert_duration_seconds_bucket{instance=~\"waku-simulator-nwaku-store-postgres-1:8008\"}",
+          "format": "heatmap",
+          "hide": false,
+          "instant": false,
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "{{le}}",
+          "range": true,
+          "refId": "B"
+        }
+      ],
+      "title": "Waku Archive Insert Duration (Postgres)",
+      "tooltip": {
+        "show": true,
+        "showHistogram": true
+      },
+      "transformations": [],
+      "type": "heatmap",
+      "xAxis": {
+        "show": true
+      },
+      "yAxis": {
+        "decimals": 0,
+        "format": "s",
+        "logBase": 1,
+        "show": true
+      },
+      "yBucketBound": "auto"
+    },
+    {
       "datasource": {
         "type": "prometheus",
         "uid": "PBFA97CFB590B2093"
@@ -3780,7 +3920,7 @@
         "h": 8,
         "w": 11,
         "x": 0,
-        "y": 136
+        "y": 146
       },
       "id": 16,
       "options": {
@@ -3898,7 +4038,7 @@
         "h": 8,
         "w": 10,
         "x": 11,
-        "y": 136
+        "y": 146
       },
       "id": 59,
       "options": {
@@ -3992,7 +4132,7 @@
         "h": 8,
         "w": 11,
         "x": 0,
-        "y": 144
+        "y": 154
       },
       "id": 42,
       "options": {
@@ -4086,7 +4226,7 @@
         "h": 8,
         "w": 10,
         "x": 11,
-        "y": 144
+        "y": 154
       },
       "id": 48,
       "options": {
@@ -4369,7 +4509,7 @@
         "h": 8,
         "w": 11,
         "x": 0,
-        "y": 152
+        "y": 162
       },
       "id": 2,
       "options": {
@@ -4462,8 +4602,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -4478,7 +4617,7 @@
         "h": 8,
         "w": 10,
         "x": 11,
-        "y": 152
+        "y": 162
       },
       "id": 50,
       "options": {
@@ -4767,6 +4906,6 @@
   "timezone": "",
   "title": "nwaku-monitoring",
   "uid": "x01BwcJ4z",
-  "version": 5,
+  "version": 6,
   "weekStart": ""
 }
