@@ -79,6 +79,7 @@ services:
       - ./run_nwaku_store_postgres.sh:/opt/run_nwaku_store_postgres.sh:Z
     depends_on:
       - bootstrap
+      - postgres
     networks:
       - simulation
 
