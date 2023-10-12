@@ -73,6 +73,8 @@ services:
     deploy:
       replicas: ${NUM_NWAKU_STORE_POSTGRES_NODES}
     entrypoint: sh
+    <<:
+      - *pg_env
     command:
       - '/opt/run_nwaku_store_postgres.sh'
     volumes:
