@@ -1,0 +1,10 @@
+export GOWAKU_IMAGE=statusteam/go-waku:v0.7.0
+export NWAKU_IMAGE=statusteam/nim-waku:v0.20.0
+export NUM_NWAKU_NODES=5
+export NUM_NWAKU_STORE_POSTGRES_NODES=1
+export NUM_NWAKU_STORE_SQLITE_NODES=1
+export NUM_GOWAKU_NODES=5
+export MSG_PER_SECOND=10
+export MSG_SIZE_KBYTES=10
+export POSTGRES_USER=postgres
+export POSTGRES_PASSWORD=test123
