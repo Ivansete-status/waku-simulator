@@ -9,6 +9,24 @@ networks:
           config:
               - subnet: "10.1.0.0/22"
 
+# Environment variable definitions
+x-pg-pass: &pg_pass ${POSTGRES_PASSWORD:-test123}
+x-pg-user: &pg_user ${POSTGRES_USER:-postgres}
+
+x-pg-environment: &pg_env
+  environment:
+    POSTGRES_USER: *pg_user
+    POSTGRES_PASSWORD: *pg_pass
+    PGDATA: /var/lib/postgresql/data/pgdata
+
+x-pg-exporter-env: &pg_exp_env
+  environment:
+    POSTGRES_PASSWORD: *pg_pass
+    DATA_SOURCE_URI: postgres?sslmode=disable
+    DATA_SOURCE_USER: *pg_user
+    DATA_SOURCE_PASS: *pg_pass
+    PG_EXPORTER_EXTEND_QUERY_PATH: /etc/pgexporter/queries.yml
+
 services:
 
   bootstrap:
