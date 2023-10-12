@@ -14,8 +14,8 @@ scrape_configs:
     static_configs:
     - targets:
       - bootstrap:8008
-      - waku-simulator_nwaku-store-postgres_1:8008
-      - waku-simulator_nwaku-store-sqlite_1:8008
+      - waku-simulator-nwaku-store-postgres-1:8008
+      - waku-simulator-nwaku-store-sqlite-1:8008
       - waku-simulator_nwaku_1:8008
       - waku-simulator_nwaku_2:8008
       - waku-simulator_nwaku_3:8008
