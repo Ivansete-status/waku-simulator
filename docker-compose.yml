@@ -204,6 +204,8 @@ services:
       timeout: 60s
       retries: 5
       start_period: 80s
+    networks:
+      - simulation
 
   postgres-exporter:
     # Service aimed to scrape information from Postgres and post it to Prometeus
@@ -216,5 +218,7 @@ services:
     command:
       # Both the config file and 'DATA_SOURCE_NAME' should contain valid connection info
       - --config.file=/etc/pgexporter/postgres-exporter.yml
+    networks:
+      - simulation
     depends_on:
       - postgres
