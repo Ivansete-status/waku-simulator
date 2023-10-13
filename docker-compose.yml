@@ -117,6 +117,19 @@ services:
     depends_on:
       - bootstrap
 
+  waku-store-query-generator:
+    image: ivansete/waku-store-request-maker:903c7d2a
+    entrypoint: sh
+      - 'opt/run_waku_store_query_maker.sh'
+    deploy:
+      replicas: ${NUM_WAKU_QUERY_GENERATOR_NODES}
+    volumes:
+      - ./run_waku_store_query_maker.sh:/opt/run_waku_store_query_maker.sh:Z
+    environment:
+      STORE_QUERIES_PER_SECOND: 10
+    networks:
+      - simulation
+
   waku-publisher:
     image: alrevuelta/waku-publisher:9fb206c
     entrypoint: sh
