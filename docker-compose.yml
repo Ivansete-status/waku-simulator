@@ -121,6 +121,8 @@ services:
     image: alrevuelta/waku-publisher:9fb206c
     entrypoint: sh
       - 'opt/run_wakupublisher.sh'
+    deploy:
+      replicas: ${NUM_WAKU_PUBLISHER_NODES}
     volumes:
       - ./run_wakupublisher.sh:/opt/run_wakupublisher.sh:Z
     environment:
